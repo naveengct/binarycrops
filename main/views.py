@@ -18,4 +18,6 @@ def hello(request):
     img=np.reshape(img,(1,224,224,3))
     temp=model.predict(img)
     y=np.argmax(temp)
+    CAT=['ladies_finger', 'maize', 'carrot', 'sunflower', 'thulasi',
+       'tomato', 'pumpkin', 'onion', 'brinjal']
     return render(request, 'base.html', {'res1':CAT[y]})
